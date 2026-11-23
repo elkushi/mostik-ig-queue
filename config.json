@@ -1,0 +1,14 @@
+{
+  "repo": "elkushi/mostik-ig-queue",
+  "pages_base": "https://elkushi.github.io/mostik-ig-queue",
+  "api_host": "https://graph.instagram.com",
+  "api_version": "",
+  "times_utc": { "carousel": "12:00", "reel": "17:00" },
+  "autopilot_from": "2026-12-14",
+  "max_attempts": 3,
+  "stats_days": 35,
+  "local": {
+    "social_dir": "../../mostik/social-media",
+    "stats_report": "../../mostik/social-media/instagram-stats.md"
+  }
+}

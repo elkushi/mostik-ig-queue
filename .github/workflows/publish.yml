@@ -1,0 +1,33 @@
+name: publish
+# Carousel 12:00 UTC, Reel 17:00 UTC (times in config.json; posts carry their own time).
+# Runs a few minutes after each slot; GitHub cron can be late, the script publishes anything due.
+on:
+  schedule:
+    - cron: "5 12 * * *"
+    - cron: "5 17 * * *"
+    - cron: "35 20 * * *"   # catch-up run if an earlier one was skipped or failed
+  workflow_dispatch:
+    inputs:
+      dry_run: { description: "Dry run (publish nothing)", type: boolean, default: false }
+concurrency: { group: queue, cancel-in-progress: false }
+permissions: { contents: write }
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Publish due posts
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python3 ig.py publish-due ${{ inputs.dry_run && '--dry-run' || '' }}
+      - name: Save status
+        if: always()
+        run: |
+          git config user.name ig-autopilot
+          git config user.email ig-autopilot@users.noreply.github.com
+          git add queue
+          git diff --cached --quiet || { git commit -m "publish: $(date -u +%F' '%H:%M) UTC" && git pull --rebase -q && git push -q; }
