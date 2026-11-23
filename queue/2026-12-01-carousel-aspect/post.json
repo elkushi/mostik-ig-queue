@@ -1,0 +1,37 @@
+{
+  "id": "2026-12-01-carousel-aspect",
+  "type": "carousel",
+  "date": "2026-12-01",
+  "time_utc": "12:00",
+  "level": "A2",
+  "series": "cheat-sheet",
+  "title": "Читал or прочитал",
+  "caption": "Чита́л or прочита́л? This pair trips up almost every learner.\nProcess or habit: чита́ть. One finished result: прочита́ть.\nWhich verb pair confuses you most? Save this cheat sheet.\n#learnrussian #russiangrammar #russianlanguage #russianverbs",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-01_aspect",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:55:53+00:00"
+  }
+}

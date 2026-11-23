@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-01-reel-moskvu-wrong",
+  "type": "reel",
+  "date": "2026-12-01",
+  "time_utc": "17:00",
+  "level": "A1",
+  "series": "wrong-vs-right",
+  "title": "Stop saying Я люблю Москва",
+  "caption": "Я люблю́ Москва́? Almost every learner says it. Here is the fix.\nAfter люби́ть, words in -а change to -у: Москву́, ма́му, пи́ццу.\nDid you make this mistake? Be honest in the comments.\n#learnrussian #russiangrammar #russianlanguage #russiancases",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-moskvu-wrong",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:20+00:00"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "2026-12-03-carousel-motion-quiz",
+  "type": "carousel",
+  "date": "2026-12-03",
+  "time_utc": "12:00",
+  "level": "B1",
+  "series": "quiz",
+  "title": "Motion verbs quiz",
+  "caption": "Motion verbs quiz: can you get 4/4?\nидти́ or е́хать, ходи́ть or е́здить: one choice per question, answers inside.\nComment your score! Save it and try again next week.\n#learnrussian #russiangrammar #russianquiz #russianlanguage",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg",
+    "slide-08.jpg",
+    "slide-09.jpg",
+    "slide-10.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-03_motion-quiz",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:01+00:00"
+  }
+}

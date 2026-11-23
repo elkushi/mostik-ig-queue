@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-04-reel-ni-pukha",
+  "type": "reel",
+  "date": "2026-12-04",
+  "time_utc": "17:00",
+  "level": "B1",
+  "series": "guess-the-meaning",
+  "title": "Guess the meaning: Ни пуха ни пера",
+  "caption": "Ни пу́ха ни пера́! Russians say it before an exam, or anything hard. Did you guess the meaning?\nIt means good luck, and the reply is К чёрту!, never спаси́бо.\nComment A, B or C before you watch the answer.\n#learnrussian #russianidioms #russianlanguage #advancedrussian",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-ni-pukha",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:22+00:00"
+  }
+}

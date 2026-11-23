@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-06-reel-mne-nravitsya",
+  "type": "reel",
+  "date": "2026-12-06",
+  "time_utc": "17:00",
+  "level": "A2",
+  "series": "wrong-vs-right",
+  "title": "I like is a trap: мне нравится",
+  "caption": "\"I like this film\" is a trap in Russian.\nNot Я нра́вится, but Мне нра́вится э́тот фильм: the film pleases me. More than one? Мне нра́вятся.\nDid you ever say я нра́вится? Be honest.\n#learnrussian #russiangrammar #russianlanguage #learnrussianfast",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-mne-nravitsya",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:24+00:00"
+  }
+}

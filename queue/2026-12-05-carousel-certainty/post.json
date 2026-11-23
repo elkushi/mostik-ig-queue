@@ -1,0 +1,37 @@
+{
+  "id": "2026-12-05-carousel-certainty",
+  "type": "carousel",
+  "date": "2026-12-05",
+  "time_utc": "12:00",
+  "level": "C1",
+  "series": "nuance",
+  "title": "How sure are you",
+  "caption": "Наве́рное, вероя́тно, по-ви́димому: they all look like 'probably'. They aren't the same.\nка́жется = my impression, по-ви́димому = from what I can see.\nWhich one do you use most? Save this.\n#learnrussian #advancedrussian #russianlanguage #russianvocabulary",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-05_certainty",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:08+00:00"
+  }
+}

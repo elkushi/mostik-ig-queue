@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-02-reel-karim-ep1-coffee",
+  "type": "reel",
+  "date": "2026-12-02",
+  "time_utc": "17:00",
+  "level": "A1",
+  "series": "karim-in-moscow",
+  "title": "Karim in Moscow, ep. 1: coffee",
+  "caption": "Karim's first coffee in Moscow, episode 1.\nМо́жно ко́фе? = Can I have a coffee? One word, мо́жно, works in every café and shop.\nWhat would you order? Answer in Russian in the comments.\n#learnrussian #russianforbeginners #russianlanguage #russianphrases",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-karim-ep1-coffee",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T13:00:47+00:00"
+  }
+}

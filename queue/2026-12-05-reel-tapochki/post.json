@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-05-reel-tapochki",
+  "type": "reel",
+  "date": "2026-12-05",
+  "time_utc": "17:00",
+  "level": "A2",
+  "series": "russia-in-30-seconds",
+  "title": "Russia in 30 seconds: shoes off",
+  "caption": "Visiting a Russian home? Shoes off at the door.\nThe host says Проходи́те! Вот та́почки. You say Спаси́бо! and Мо́жно ру́ки помы́ть?\nIs it the same in your country?\n#learnrussian #russianculture #russianlanguage #russianvocabulary",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-tapochki",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:23+00:00"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "2026-12-02-carousel-metro",
+  "type": "carousel",
+  "date": "2026-12-02",
+  "time_utc": "12:00",
+  "level": "A2",
+  "series": "word-set",
+  "title": "Moscow metro words",
+  "caption": "Going to Moscow? These metro words will save you.\nста́нция = station, переса́дка = transfer, вы́ход = exit.\nHave you heard «Осторо́жно, две́ри закрыва́ются!»? Save this for your trip.\n#learnrussian #russianvocabulary #moscowmetro #russianlanguage",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-02_metro",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:55:56+00:00"
+  }
+}

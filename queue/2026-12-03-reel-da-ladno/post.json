@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-03-reel-da-ladno",
+  "type": "reel",
+  "date": "2026-12-03",
+  "time_utc": "17:00",
+  "level": "B2",
+  "series": "say-it-like-a-russian",
+  "title": "Да ладно: textbook vs real life",
+  "caption": "Textbooks teach Не мо́жет быть! Russians say Да ла́дно!\nДа ла́дно = No way! / Come on! Casual only: with friends, not with your boss.\nHave you heard it in real life? Tell me in the comments.\n#learnrussian #russianslang #russianlanguage #speakrussian",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-da-ladno",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:56:21+00:00"
+  }
+}

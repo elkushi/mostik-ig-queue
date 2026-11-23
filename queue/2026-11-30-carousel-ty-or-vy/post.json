@@ -1,0 +1,38 @@
+{
+  "id": "2026-11-30-carousel-ty-or-vy",
+  "type": "carousel",
+  "date": "2026-11-30",
+  "time_utc": "12:00",
+  "level": "A1",
+  "series": "cheat-sheet",
+  "title": "Ты or вы",
+  "caption": "Ты or вы? Pick the wrong one and you sound rude, or cold.\nты = one person you know well. вы = someone you respect, or any group.\nNot sure? Say вы. It is always safe.\nWho was the last person you said ты to? Save this and send it to a friend learning Russian.\n#learnrussian #russianlanguage #russianforbeginners #russiangrammar",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg",
+    "slide-08.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-30_ty-or-vy",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": true,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T12:55:50+00:00"
+  }
+}
