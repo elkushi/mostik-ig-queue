@@ -321,7 +321,10 @@ def cmd_push(args):
         run(["git", "add", "-A"], t)
         run(["git", "-c", "user.name=ig-autopilot", "-c", "user.email=ig-autopilot@users.noreply.github.com",
              "commit", "-q", "-m", f"media {dt.datetime.now(UTC).isoformat(timespec='minutes')}"], t)
-        run(["git", "push", "-q", "--force", origin, "media:media"], t)
+        # The temp repo doesn't inherit this repo's local credential helper (gh over https), so pass it on.
+        helper = run(["git", "config", "--get", "credential.https://github.com.helper"], HERE, check=False)
+        cred = ["-c", f"credential.https://github.com.helper={helper}"] if helper else []
+        run(["git", *cred, "push", "-q", "--force", origin, "media:media"], t)
     print(f"pushed queue ({len(pending)} pending posts) and {n} media files")
 
 
