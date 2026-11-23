@@ -38,7 +38,7 @@ Stdlib only (Python 3.12+), plus `ffmpeg` / `ffprobe` on the laptop.
 
 ## One-time setup
 1. **Token (Moustafa, VPN on):** developers.facebook.com → My Apps → Create app → use case **Other** → type **Business** → add product **Instagram** → **API setup with Instagram login** → *Generate access tokens* → add @russianinuse (account must be public) and log in to Instagram → copy the token into `.env` as `IG_TOKEN=…`. Then `python3 ig.py whoami`.
-2. **Queue repo (Claude, after OK):** `gh repo create elkushi/mostik-ig-queue --public --source . --push`, then Pages from branch `media`, then the secrets `IG_TOKEN`, `IG_USER_ID`.
+2. **Queue repo: done 2026-11-23.** https://github.com/elkushi/mostik-ig-queue (public), Pages from branch `media` → https://elkushi.github.io/mostik-ig-queue/. Remote is `https://elkushi@github.com/...` with a repo-local `gh auth git-credential` helper, because the global `insteadOf` rewrites plain https GitHub URLs to ssh and the ssh key has no GitHub access. Still to set after the token: secrets `IG_TOKEN`, `IG_USER_ID` (`gh secret set … --repo elkushi/mostik-ig-queue`).
 3. **GH_PAT (Moustafa, 2 min):** GitHub → Settings → Developer settings → Fine-grained tokens → only this repo → permission *Secrets: read and write* → save as repo secret `GH_PAT`. Without it the weekly refresh can't save the new token and posting stops after 60 days.
 4. Dry run: Actions → publish → Run workflow → dry run ✓.
 
