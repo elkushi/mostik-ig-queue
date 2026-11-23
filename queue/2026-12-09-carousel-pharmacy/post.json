@@ -1,0 +1,37 @@
+{
+  "id": "2026-12-09-carousel-pharmacy",
+  "type": "carousel",
+  "date": "2026-12-09",
+  "time_utc": "12:00",
+  "level": "A2",
+  "series": "word-set",
+  "title": "At the pharmacy",
+  "caption": "At a Russian pharmacy, one pattern does it all: У меня́ боли́т + body part.\nУ меня́ боли́т голова́ = I have a headache. У меня́ боли́т го́рло = I have a sore throat.\nSave this for your trip. What would you say first?\n#learnrussian #russianvocabulary #russianlanguage #russianphrases",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-09_pharmacy",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:56+00:00"
+  }
+}

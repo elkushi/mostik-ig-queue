@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-08-reel-v-moskve-v-moskvu",
+  "type": "reel",
+  "date": "2026-12-08",
+  "time_utc": "17:00",
+  "level": "A2",
+  "series": "wrong-vs-right",
+  "title": "In Moscow or to Moscow: в Москве vs в Москву",
+  "caption": "Я е́ду в Москве́? One letter is wrong.\nWhere? в Москве́. Where to? в Москву́.\nWhere are you going this weekend? Answer in Russian.\n#learnrussian #russiangrammar #russianlanguage #russiancases",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-v-moskve-v-moskvu",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:56+00:00"
+  }
+}

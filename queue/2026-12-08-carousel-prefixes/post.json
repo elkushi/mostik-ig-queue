@@ -1,0 +1,37 @@
+{
+  "id": "2026-12-08-carousel-prefixes",
+  "type": "carousel",
+  "date": "2026-12-08",
+  "time_utc": "12:00",
+  "level": "B1",
+  "series": "cheat-sheet",
+  "title": "One verb, six directions",
+  "caption": "One verb, six directions: prefixes turn идти́ into arrive, leave, cross and more.\nприйти́ = arrive, уйти́ = leave, вы́йти = go out, зайти́ = drop in, перейти́ = cross, подойти́ = approach.\nWhich prefix do you mix up? Save this cheat sheet.\n#learnrussian #russiangrammar #russianverbs #russianlanguage",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-08_prefixes",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:56+00:00"
+  }
+}

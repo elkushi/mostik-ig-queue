@@ -1,0 +1,40 @@
+{
+  "id": "2026-12-10-carousel-numbers-quiz",
+  "type": "carousel",
+  "date": "2026-12-10",
+  "time_utc": "12:00",
+  "level": "A2",
+  "series": "quiz",
+  "title": "Numbers and nouns quiz",
+  "caption": "Numbers change the noun in Russian. Can you get 4/4?\nдва бра́та, but пять книг: 2–4 take one form, 5–20 another.\nComment your score! Save it and try again next week.\n#learnrussian #russiangrammar #russianquiz #russianlanguage",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg",
+    "slide-07.jpg",
+    "slide-08.jpg",
+    "slide-09.jpg",
+    "slide-10.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-10_numbers-quiz",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:57+00:00"
+  }
+}

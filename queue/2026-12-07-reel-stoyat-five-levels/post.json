@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-07-reel-stoyat-five-levels",
+  "type": "reel",
+  "date": "2026-12-07",
+  "time_utc": "17:00",
+  "level": "A1",
+  "series": "one-word-five-levels",
+  "title": "One Russian word, five meanings: стоять",
+  "caption": "One Russian word, five meanings: стоя́ть.\nA person stands, a vase stands, the weather stands, a watch stands, and a task stands before you.\nWhich level were you at? Tell me in the comments, and save this.\n#learnrussian #russianlanguage #russianwords #russianvocabulary",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-stoyat-five-levels",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:56+00:00"
+  }
+}

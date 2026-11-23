@@ -1,0 +1,36 @@
+{
+  "id": "2026-12-12-carousel-but-words",
+  "type": "carousel",
+  "date": "2026-12-12",
+  "time_utc": "12:00",
+  "level": "B1",
+  "series": "nuance",
+  "title": "Four ways to say but",
+  "caption": "Russian has four ways to say 'but': но, а, одна́ко, зато́.\nно = contrast, а = comparison, одна́ко = formal 'however', зато́ = 'but on the bright side'.\nWhich one do you use most? Save this.\n#learnrussian #advancedrussian #russianlanguage #russiangrammar",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-12_but-words",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:57+00:00"
+  }
+}

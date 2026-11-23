@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-09-reel-karim-ep2-priyatno",
+  "type": "reel",
+  "date": "2026-12-09",
+  "time_utc": "17:00",
+  "level": "A1",
+  "series": "karim-in-moscow",
+  "title": "Karim in Moscow, ep. 2: nice to meet you",
+  "caption": "Karim in Moscow, episode 2: meeting someone new.\nКак тебя́ зову́т? = What's your name? О́чень прия́тно! = Nice to meet you!\nHow would you introduce yourself? Write it in Russian below.\n#learnrussian #russianforbeginners #russianlanguage #russianphrases",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-karim-ep2-priyatno",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:56+00:00"
+  }
+}

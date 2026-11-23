@@ -1,0 +1,36 @@
+{
+  "id": "2026-12-11-carousel-disagree",
+  "type": "carousel",
+  "date": "2026-12-11",
+  "time_utc": "12:00",
+  "level": "B2",
+  "series": "phrases",
+  "title": "Disagree politely in Russian",
+  "caption": "How to disagree in Russian without sounding rude.\nTry Я не совсе́м согла́сен instead of Вы непра́вы, and Позво́льте не согласи́ться when it's formal.\nWhich phrase is new for you? Save this.\n#learnrussian #russianphrases #russianlanguage #advancedrussian",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-12-11_disagree",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:57+00:00"
+  }
+}

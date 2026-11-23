@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-11-reel-medvezhya-usluga",
+  "type": "reel",
+  "date": "2026-12-11",
+  "time_utc": "17:00",
+  "level": "C1",
+  "series": "guess-the-meaning",
+  "title": "Guess the meaning: медвежья услуга",
+  "caption": "Медве́жья услу́га: literally 'a bear's favour'. Did you guess the meaning?\nIt's help that makes things worse. The phrase comes from a fable by Krylov.\nComment A, B or C before the answer.\n#learnrussian #russianidioms #advancedrussian #russianlanguage",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-medvezhya-usluga",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:57+00:00"
+  }
+}

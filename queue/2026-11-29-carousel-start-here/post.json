@@ -1,0 +1,36 @@
+{
+  "id": "2026-11-29-carousel-start-here",
+  "type": "carousel",
+  "date": "2026-11-29",
+  "time_utc": "12:00",
+  "level": "A1",
+  "series": "start-here",
+  "title": "Start here",
+  "caption": "New here? This is how the page works.\nEvery day: a Reel and a cheat sheet, each with a level badge from A1 to C1. Save the ones you need, and review them with the Sunday recap.\nWhat's your level right now? Comment A1, A2, B1 or B2+.\n#learnrussian #russianlanguage #studyrussian #russianforbeginners",
+  "media": [
+    "slide-01.jpg",
+    "slide-02.jpg",
+    "slide-03.jpg",
+    "slide-04.jpg",
+    "slide-05.jpg",
+    "slide-06.jpg"
+  ],
+  "cover": null,
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-29_start-here",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:31+00:00"
+  }
+}

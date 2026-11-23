@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-12-reel-novy-god",
+  "type": "reel",
+  "date": "2026-12-12",
+  "time_utc": "17:00",
+  "level": "A1",
+  "series": "russia-in-30-seconds",
+  "title": "Russia in 30 seconds: New Year",
+  "caption": "In Russia, New Year is bigger than Christmas.\nС Но́вым го́дом! = Happy New Year! Ёлка, Дед Моро́з and мандари́ны make the night.\nHow do you celebrate New Year?\n#learnrussian #russianculture #russianlanguage #newyear",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-novy-god",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:57+00:00"
+  }
+}

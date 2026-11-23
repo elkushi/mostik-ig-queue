@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-13-reel-skuchayu-po-tebe",
+  "type": "reel",
+  "date": "2026-12-13",
+  "time_utc": "17:00",
+  "level": "B1",
+  "series": "wrong-vs-right",
+  "title": "I miss you is a trap: скучаю по тебе",
+  "caption": "\"I miss you\" in Russian is a trap.\nNot «скуча́ю тебя́», but «Я скуча́ю по тебе́». It works for places too: Я скуча́ю по до́му.\nWho do you miss? Answer in Russian.\n#learnrussian #russiangrammar #russianlanguage #learnrussianfast",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-skuchayu-po-tebe",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:58+00:00"
+  }
+}

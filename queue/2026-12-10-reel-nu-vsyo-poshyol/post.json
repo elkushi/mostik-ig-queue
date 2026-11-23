@@ -1,0 +1,31 @@
+{
+  "id": "2026-12-10-reel-nu-vsyo-poshyol",
+  "type": "reel",
+  "date": "2026-12-10",
+  "time_utc": "17:00",
+  "level": "B2",
+  "series": "say-it-like-a-russian",
+  "title": "Ну всё, я пошёл: textbook vs real life",
+  "caption": "Russians say «я пошёл» before they actually leave.\nНу всё, я пошёл! = Right, I'm off! A woman says пошла́. A group: Пошли́!\nHave you heard it in real life?\n#learnrussian #russianslang #russianlanguage #speakrussian",
+  "media": [
+    "video.mp4"
+  ],
+  "cover": "cover.jpg",
+  "source": "../../mostik/social-media/Mostik_instagram/2026-11-23_ig-nu-vsyo-poshyol",
+  "review": {
+    "natasha": "PASS",
+    "notes": ""
+  },
+  "approved": false,
+  "status": "queued",
+  "attempts": 0,
+  "error": null,
+  "published": null,
+  "stats": null,
+  "checks": {
+    "passed": true,
+    "problems": [],
+    "warnings": [],
+    "at": "2026-11-23T23:46:57+00:00"
+  }
+}
