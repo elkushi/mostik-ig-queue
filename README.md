@@ -13,10 +13,13 @@ Nothing secret is ever committed: the token lives in `.env` (git-ignored) and in
 |---|---|---|
 | Sunday | laptop, `ig-week` skill | make 14 posts → `ig.py add` each (runs the check gate) → `ig.py push` |
 | 12:05 / 17:05 / 20:35 UTC daily | GitHub Actions `publish.yml` | `ig.py publish-due`: publishes what's due, approved and passed; at most one per type per run; 3 failed attempts → `failed`; any failure → GitHub emails |
-| Sunday 06:00 UTC | GitHub Actions `maintenance.yml` | refresh the 60-day token (saved back with `GH_PAT`), pull numbers into `queue/*/post.json` + `stats/followers.csv` |
-| any time | laptop | `ig.py report` → `projects/mostik/social-media/instagram-stats.md` |
+| Sunday 06:00 UTC | GitHub Actions `maintenance.yml` | refresh the 60-day token (saved back with `GH_PAT`), then an **encrypted snapshot** of the whole account → `stats/snapshots/<date>.json.enc`: every post (older ones too) with reach, views, saves, shares, follows, watch time; account reach / engagement; followers by country, city, age, gender; online hours; comment texts (no usernames) |
+| Sunday, ig-week step 0 | laptop, `social-analyst` agent | `ig.py pull` (decrypt into git-ignored `staging/analytics/`) → `analyze.py` → `projects/mostik/social-media/analytics/insights.md` → report, `grid.next.json`, `topic-backlog.md`; ig-week applies the grid change |
 
 Approval: posts dated before `autopilot_from` (2026-12-14, `config.json`) need `ig.py approve`; later posts that pass the gate are approved automatically.
+
+## Why snapshots are encrypted
+The repo is public, and comments and audience numbers are about real people. `vault.py` encrypts each snapshot with AES-256 (openssl, PBKDF2) using `STATS_KEY` (GitHub secret + laptop `.env`, set 2026-11-23). Decrypted copies exist only in `staging/` on the laptop. Permissions the token needs for this: `instagram_business_basic`, `instagram_business_manage_insights`, `instagram_business_manage_comments` (plus `instagram_business_content_publish` for posting).
 
 ## The check gate (`checks.py`)
 Holds a post back if: level not A1–C1 · caption over 2,200 chars, hashtags not 3–8, Phase 1 words (Mostik, NoTranslate, our app, prices…), Russian without stress marks, Latin transliteration · carousel not 2–10 JPEG slides at 1080×1350, or `render-report.json` not clean · Reel not 1080×1920 h264 + aac, 5–90 s, under 95 MB, or `qa.json` from `review.mjs` is a draft / has fails / Whisper couldn't confirm the voice · Natasha review not PASS.
@@ -30,9 +33,10 @@ python3 ig.py sheet --week 2026-11-30   # review page (supervised weeks)
 python3 ig.py approve --week 2026-11-30
 python3 ig.py status
 python3 ig.py push
-python3 ig.py report
+python3 ig.py pull                    # decrypt snapshots (needs STATS_KEY in .env)
+python3 analyze.py                    # → mostik/social-media/analytics/insights.md
 python3 ig.py publish-due --dry-run --now 2026-11-30T17:10
-python3 -m unittest discover -s tests   # 13 tests, no network
+python3 -m unittest discover -s tests   # 17 tests, no network
 ```
 Stdlib only (Python 3.12+), plus `ffmpeg` / `ffprobe` on the laptop.
 

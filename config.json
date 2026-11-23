@@ -7,8 +7,10 @@
   "autopilot_from": "2026-12-14",
   "max_attempts": 3,
   "stats_days": 35,
+  "snapshot_media": 60,
+  "snapshot_comments": 30,
   "local": {
     "social_dir": "../../mostik/social-media",
-    "stats_report": "../../mostik/social-media/instagram-stats.md"
+    "analytics_dir": "../../mostik/social-media/analytics"
   }
 }

@@ -11,7 +11,8 @@ Laptop (Sunday, after /ig-week made the posts):
   python3 ig.py approve --week YYYY-MM-DD | ID
   python3 ig.py status [--week YYYY-MM-DD]
   python3 ig.py push                        queue → GitHub, media → the Pages branch
-  python3 ig.py report                      numbers → projects/mostik/social-media/instagram-stats.md
+  python3 ig.py pull                        decrypt the weekly snapshots → staging/analytics/
+  python3 analyze.py                        snapshots → insights.md / insights.json for the social-analyst agent
 
 GitHub Actions:
   python3 ig.py publish-due [--dry-run] [--now 2026-11-30T17:05]
@@ -328,38 +329,6 @@ def cmd_push(args):
     print(f"pushed queue ({len(pending)} pending posts) and {n} media files")
 
 
-def cmd_report(args):
-    rows = [p for p in posts() if p["status"] == "published"]
-    fol = STATS / "followers.csv"
-    lines = ["# Instagram numbers", "",
-             f"Updated {dt.date.today()} from `projects/tools/ig-autopilot` (`python3 ig.py report`). "
-             "The Sunday `/ig-week` reads this before picking ideas.", ""]
-    if fol.exists():
-        pts = [l.split(",") for l in fol.read_text().splitlines()[1:] if l]
-        if pts:
-            lines += ["## Followers", "", "| Date | Followers |", "|---|---|"] + [f"| {d} | {n} |" for d, n, *_ in pts[-10:]] + [""]
-    def score(p):
-        s = p.get("stats") or {}
-        return (s.get("shares") or 0) * 3 + (s.get("saved") or 0) * 2 + (s.get("follows") or 0) * 5
-    lines += ["## Posts, best first (score = 3×shares + 2×saves + 5×follows)", "",
-              "| Date | Type | Level | Series | Title | Views | Reach | Saves | Shares | Follows | Score | Link |",
-              "|---|---|---|---|---|---|---|---|---|---|---|---|"]
-    for p in sorted(rows, key=score, reverse=True):
-        s = p.get("stats") or {}
-        link = (p.get("published") or {}).get("permalink") or ""
-        lines.append(f"| {p['date']} | {p['type']} | {p['level']} | {p['series']} | {p['title']} | {s.get('views', '')} | "
-                     f"{s.get('reach', '')} | {s.get('saved', '')} | {s.get('shares', '')} | {s.get('follows', '')} | {score(p)} | {link} |")
-    series: dict[str, list[int]] = {}
-    for p in rows:
-        series.setdefault(p["series"], []).append(score(p))
-    lines += ["", "## Series average score", "", "| Series | Posts | Avg score |", "|---|---|---|"]
-    for k, v in sorted(series.items(), key=lambda kv: -sum(kv[1]) / len(kv[1])):
-        lines.append(f"| {k} | {len(v)} | {sum(v) / len(v):.1f} |")
-    out = (HERE / CFG["local"]["stats_report"]).resolve()
-    out.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(out)
-
-
 # ---------------------------------------------------------------- GitHub Actions commands
 def cmd_publish_due(args):
     now = dt.datetime.fromisoformat(args.now).replace(tzinfo=UTC) if args.now else dt.datetime.now(UTC)
@@ -424,27 +393,52 @@ def cmd_refresh_token(args):
     print(f"token refreshed, valid {days} more days")
 
 
+def snapshot(ig) -> dict:
+    """Everything the analyst needs, from the whole account (older posts too), in one dict."""
+    by_mid = {(p.get("published") or {}).get("media_id"): p for p in posts() if p.get("published")}
+    snap = {"date": str(dt.date.today()), "platform": "instagram", "account": ig.whoami(),
+            "account_insights_7d": ig.account_insights(7), "demographics": ig.demographics(),
+            "online_followers": ig.online_followers(), "media": []}
+    for i, m in enumerate(ig.list_media(CFG.get("snapshot_media", 60))):
+        kind = "reel" if m.get("media_product_type") == "REELS" else "post"
+        q = by_mid.get(m["id"], {})
+        row = {**m, "kind": kind, "queue_id": q.get("id"), "series": q.get("series"), "level": q.get("level"),
+               "slot_utc": q.get("time_utc"), "insights": ig.media_insights(m["id"], kind)}
+        if i < CFG.get("snapshot_comments", 30) and m.get("comments_count"):
+            try:
+                row["comments"] = ig.comments(m["id"])
+            except IgError as e:
+                row["comments_error"] = str(e)[:200]
+        snap["media"].append(row)
+    return snap
+
+
 def cmd_stats(args):
+    """GitHub Actions, weekly: encrypted snapshot of the account into stats/snapshots/."""
     if no_token_yet():
         return
-    ig = api()
-    STATS.mkdir(exist_ok=True)
-    me = ig.whoami()
-    fol = STATS / "followers.csv"
-    if not fol.exists():
-        fol.write_text("date,followers,media_count\n")
-    with fol.open("a") as f:
-        f.write(f"{dt.date.today()},{me.get('followers_count', '')},{me.get('media_count', '')}\n")
-    since = dt.date.today() - dt.timedelta(days=CFG["stats_days"])
+    from vault import encrypt
+    snap = snapshot(api())
+    out = STATS / "snapshots" / f"{snap['date']}.json.enc"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_bytes(encrypt(json.dumps(snap, ensure_ascii=False).encode()))
+    print(f"snapshot {out.name}: followers {snap['account'].get('followers_count')} · {len(snap['media'])} posts")
+
+
+def cmd_pull(args):
+    """Laptop: decrypt every snapshot into staging/analytics/ (git-ignored) for analyze.py."""
+    load_env()
+    from vault import decrypt
+    run(["git", "pull", "-q", "--rebase", "--autostash", "origin", "main"], HERE, check=False)
+    dst = STAGING / "analytics"
+    dst.mkdir(parents=True, exist_ok=True)
     n = 0
-    for p in posts():
-        mid = (p.get("published") or {}).get("media_id")
-        if p["status"] != "published" or not mid or dt.date.fromisoformat(p["date"]) < since:
-            continue
-        p["stats"] = {**ig.media_insights(mid, p["type"]), "at": str(dt.date.today())}
-        save(p)
-        n += 1
-    print(f"followers {me.get('followers_count')} · stats for {n} posts")
+    for f in sorted((STATS / "snapshots").glob("*.json.enc")):
+        target = dst / f.name.removesuffix(".enc")
+        if not target.exists():
+            target.write_bytes(decrypt(f.read_bytes()))
+            n += 1
+    print(f"{n} new snapshot(s) in {dst}")
 
 
 # ---------------------------------------------------------------- main
@@ -475,16 +469,16 @@ def main(argv=None):
     s = sub.add_parser("sheet")
     s.add_argument("--week", required=True)
     sub.add_parser("push")
-    sub.add_parser("report")
     s = sub.add_parser("publish-due")
     s.add_argument("--dry-run", action="store_true")
     s.add_argument("--now")
     sub.add_parser("refresh-token")
     sub.add_parser("stats")
+    sub.add_parser("pull")
     args = ap.parse_args(argv)
     {"whoami": cmd_whoami, "add": cmd_add, "review": cmd_review, "check": cmd_check, "approve": cmd_approve,
-     "status": cmd_status, "sheet": cmd_sheet, "push": cmd_push, "report": cmd_report,
-     "publish-due": cmd_publish_due, "refresh-token": cmd_refresh_token, "stats": cmd_stats}[args.cmd](args)
+     "status": cmd_status, "sheet": cmd_sheet, "push": cmd_push,
+     "publish-due": cmd_publish_due, "refresh-token": cmd_refresh_token, "stats": cmd_stats, "pull": cmd_pull}[args.cmd](args)
 
 
 if __name__ == "__main__":

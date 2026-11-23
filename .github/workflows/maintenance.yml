@@ -1,6 +1,6 @@
 name: maintenance
 # Sunday 06:00 UTC: refresh the 60-day token (needs GH_PAT to save it back),
-# then pull the numbers for posts from the last 35 days.
+# then take an encrypted snapshot of the whole account (posts, numbers, audience, comments).
 on:
   schedule:
     - cron: "0 6 * * 0"
@@ -21,11 +21,12 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: python3 ig.py refresh-token
-      - name: Numbers
+      - name: Numbers (encrypted snapshot)
         if: always()
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          STATS_KEY: ${{ secrets.STATS_KEY }}
         run: python3 ig.py stats
       - name: Save numbers
         if: always()

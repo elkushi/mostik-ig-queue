@@ -121,6 +121,62 @@ class Instagram:
         return self._publish(cid)
 
     # -- numbers ---------------------------------------------------------
+    def list_media(self, limit: int = 50) -> list[dict]:
+        """Every post on the account, ours and the older ones, newest first."""
+        fields = "id,caption,media_type,media_product_type,timestamp,permalink,like_count,comments_count"
+        out, after = [], None
+        while len(out) < limit:
+            params = {"fields": fields, "limit": min(50, limit - len(out))}
+            if after:
+                params["after"] = after
+            page = self.get(f"{self.user_id}/media", **params)
+            out += page.get("data", [])
+            after = page.get("paging", {}).get("cursors", {}).get("after")
+            if not after or not page.get("paging", {}).get("next"):
+                break
+        return out[:limit]
+
+    def comments(self, media_id: str, limit: int = 50) -> list[dict]:
+        """Comment texts only (no usernames are requested or stored)."""
+        return self.get(f"{media_id}/comments", fields="text,timestamp,like_count", limit=limit).get("data", [])
+
+    def account_insights(self, days: int = 7) -> dict:
+        until = int(time.time())
+        since = until - days * 86400
+        out = {}
+        for m in ["reach", "views", "accounts_engaged", "total_interactions", "profile_links_taps", "follows_and_unfollows"]:
+            try:
+                rows = self.get(f"{self.user_id}/insights", metric=m, period="day", metric_type="total_value",
+                                since=since, until=until).get("data", [])
+                for r in rows:
+                    tv = r.get("total_value", {})
+                    out[r["name"]] = tv.get("value") if not tv.get("breakdowns") else tv
+            except IgError as e:
+                out.setdefault("_errors", {})[m] = str(e)[:200]
+        return out
+
+    def demographics(self) -> dict:
+        """Followers by country, city, age, gender (needs 100+ followers)."""
+        out = {}
+        for b in ["country", "city", "age", "gender"]:
+            try:
+                rows = self.get(f"{self.user_id}/insights", metric="follower_demographics", period="lifetime",
+                                timeframe="this_month", breakdown=b, metric_type="total_value").get("data", [])
+                res = rows[0]["total_value"]["breakdowns"][0]["results"] if rows else []
+                out[b] = {",".join(r["dimension_values"]): r["value"] for r in res}
+            except (IgError, KeyError, IndexError) as e:
+                out.setdefault("_errors", {})[b] = str(e)[:200]
+        return out
+
+    def online_followers(self) -> dict:
+        """Followers online per hour (may be unavailable on newer API versions)."""
+        try:
+            rows = self.get(f"{self.user_id}/insights", metric="online_followers", period="lifetime").get("data", [])
+            vals = rows[0]["values"] if rows else []
+            return vals[-1].get("value", {}) if vals else {}
+        except (IgError, KeyError, IndexError) as e:
+            return {"_error": str(e)[:200]}
+
     def media_insights(self, media_id: str, kind: str) -> dict:
         metrics = REEL_METRICS if kind == "reel" else POST_METRICS
         try:
