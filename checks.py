@@ -131,9 +131,11 @@ def qa_problems(path: Path | None) -> list[str]:
         probs.append("qa.json is from a draft render, not the final")
     if qa.get("fails"):
         probs.append("review.mjs fails: " + "; ".join(qa["fails"])[:200])
-    bad = [v for v in (qa.get("voice") or []) if not v.get("ok")]
+    # Russian parts read by the native voice must be heard right (review.mjs "ruOk"): a wrong Russian
+    # sound is a wrong lesson. English mismatches are usually Whisper, so they only warn in review.mjs.
+    bad = [v for v in (qa.get("voice") or []) if v.get("ruOk") is False]
     if bad:
-        probs.append(f"Whisper could not confirm the voice in scene(s) {', '.join(str(v.get('scene')) for v in bad)}")
+        probs.append("Russian voice not confirmed by Whisper in scene(s) " + ", ".join(str(v.get("scene")) for v in bad))
     return probs
 
 
